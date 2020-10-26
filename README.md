@@ -40,7 +40,6 @@ Ao realizar o scraping do HTML, recomendamos utilizar estruturas recursivas para
 - Marcas
 - Embalagem
 - Categorias
-- Barcode
 
 
 Ter em conta que:
