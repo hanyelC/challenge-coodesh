@@ -31,14 +31,14 @@ Para a definição do modelo, consultar o arquivo [products.json](./products.jso
 
 ### Sistema do CRON
 
-Para prosseguir com o desafio, precisaremos criar na API um sistema de atualização que vai realizar o scrapping da página do [Open Food Facts](https://world.openfoodfacts.org/) uma vez ao día. Adicionar nos arquivos de configuração o melhor horário para executar a importação.
+Para prosseguir com o desafio, precisaremos criar na API um sistema de atualização que vai realizar o scraping da página do [Open Food Facts](https://world.openfoodfacts.org/) uma vez ao día. Adicionar nos arquivos de configuração o melhor horário para executar a importação.
 
-Ao realizar o scrapping do HTML, recomendamos utilizar estruturas recursivas para navegar entre a lista de produtos e acessar a página do produto com as informações adicionais necessárias como:
+Ao realizar o scraping do HTML, recomendamos utilizar estruturas recursivas para navegar entre a lista de produtos e acessar a página do produto com as informações adicionais necessárias como:
 
+- Código de Barras
 - Quantidade
 - Marcas
 - Embalagem
-- Código de Barras
 - Categorias
 - Barcode
 
