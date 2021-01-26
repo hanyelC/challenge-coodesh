@@ -46,6 +46,7 @@ Ter em conta que:
 
 - Todos os produtos deverão ter os campos personalizados `imported_t` e `status`.
 - Limitar a importação a somente 100 produtos;
+- Para gerar a URL das imagens, revisar o How to do projeto em: https://wiki.openfoodfacts.org/Developer-How_To
 
 ### A REST API
 
