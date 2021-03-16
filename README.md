@@ -10,7 +10,7 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 ### Obrigatório
 
 - Trabalhar em um FORK deste repositório em seu usuário;
-- O projeto back-end deverá ser desenvolvido usando em NodeJs ou Linguagem de preferência;
+- O projeto back-end deverá ser desenvolvido usando a Linguagem de preferência da Vaga;
 - O projeto front-end deverá ser desenvolvido usando em ReactJs ou Framework de preferência;
 - Documentação para configuração do projeto em ambientes de produção (como instalar, rodar e referências a libs usadas);
 
