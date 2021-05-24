@@ -90,7 +90,7 @@ Ao clicar nos produtos, expandiremos a informação utilizando um modal com os d
 
 ## Finalização
 
-Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://bit.ly/3e7MjcK)
+Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://coodesh.com/review-challenge)
 Após essa etapa será marcado a apresentação/correção do projeto.
 
 ## Instruções para a Apresentação:
