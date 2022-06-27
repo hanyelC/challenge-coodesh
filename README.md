@@ -1,4 +1,4 @@
-# Fullstack Challenge 20201026
+# Backend Challenge 20220626
 
 
 ## Introdução
@@ -11,7 +11,6 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 
 - Trabalhar em um FORK deste repositório em seu usuário;
 - O projeto back-end deverá ser desenvolvido usando a Linguagem de preferência da Vaga;
-- O projeto front-end deverá ser desenvolvido usando em ReactJs ou Framework de preferência;
 - Documentação para configuração do projeto em ambientes de produção (como instalar, rodar e referências a libs usadas);
 
 
@@ -19,7 +18,6 @@ O projeto tem como objetivo dar suporte a equipe de nutricionistas da empresa Fi
 
 - Criar um banco de dados MongoDB usando Atlas: https://www.mongodb.com/cloud/atlas ou algum Banco de Dados SQL se não sentir confortável com NoSQL;
 - Criar uma REST API com as melhores práticas de desenvolvimento.
-- Criar uma versão Web para listar os produtos
 - Recomendável usar Drivers oficiais para integração com o DB
 
 ### Modelo de Dados:
@@ -56,29 +54,12 @@ Na REST API teremos os seguintes endpoints:
 - `GET /products/:code`: Obter a informação somente de um produto;
 - `GET /products`: Listar todos os produtos da base de dados, utilizar o sistema de paginação para não sobrecarregar a `REQUEST`.
 
-### Front End
-
-Desenvolver um projeto em ReactJs ou técnologia de preferência para listar os produtos com a seguinte informação:
-
-- Imagem
-- Nome
-
-Ao clicar nos produtos, expandiremos a informação utilizando um modal com os dados:
-
-- Barcode
-- Status
-- Packaging
-- Brands
-- Store
-
-
 ## Extras
 
-- **Diferencial 1** Adicionar um sistema de comparação entre os produtos;
-- **Diferencial 2** Configurar Docker no Projeto para facilitar o Deploy da equipe de DevOps;
-- **Diferencial 3** Configurar um sistema de alerta se tem algum falho durante o Sync dos produtos;
-- **Diferencial 4** Descrever a documentação da API utilizando o conceito de Open API 3.0;
-- **Diferencial 5** Escrever Unit Tests para os endpoints da API;
+- **Diferencial 1** Configurar Docker no Projeto para facilitar o Deploy da equipe de DevOps;
+- **Diferencial 2** Configurar um sistema de alerta se tem algum falho durante o Sync dos produtos;
+- **Diferencial 3** Descrever a documentação da API utilizando o conceito de Open API 3.0;
+- **Diferencial 4** Escrever Unit Tests para os endpoints da API;
 
 
 ## Readme do Repositório
@@ -88,21 +69,35 @@ Ao clicar nos produtos, expandiremos a informação utilizando um modal com os d
 - Como instalar e usar o projeto (instruções)
 - Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
 
-## Finalização
+## Readme do Repositório
 
-Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://coodesh.com/review-challenge)
-Após essa etapa será marcado a apresentação/correção do projeto.
+- Deve conter o título do projeto
+- Uma descrição sobre o projeto em frase
+- Deve conter uma lista com linguagem, framework e/ou tecnologias usadas
+- Como instalar e usar o projeto (instruções)
+- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
+- Se está usando github pessoal, referencie que é um challenge by coodesh:  
 
-## Instruções para a Apresentação:
+>  This is a challenge by [Coodesh](https://coodesh.com/)
 
-1. Será necessário compartilhar a tela durante a vídeo chamada;
-2. Deixe todos os projetos de solução previamente abertos em seu computador antes de iniciar a chamada;
-3. Deixe os ambientes configurados e prontos para rodar;
-4. Prepara-se pois você será questionado sobre cada etapa e decisão do Challenge;
-5. Prepare uma lista de perguntas, dúvidas, sugestões de melhorias e feedbacks (caso tenha).
+## Finalização e Instruções para a Apresentação
 
+Avisar sobre a finalização e enviar para correção.
+
+1. Confira se você respondeu o Scorecard anexado na Vaga que se candidatou;
+2. Confira se você respondeu o Mapeamento anexado na Vaga que se candidatou;
+3. Acesse [https://coodesh.com/challenges/review](https://coodesh.com/challenges/review);
+4. Adicione o repositório com a sua solução;
+5. Grave um vídeo, utilizando o botão na tela de solicitar revisão da Coodesh, com no máximo 5 minutos, com a apresentação do seu projeto. Utilize o tempo para:
+- Explicar o objetivo do desafio
+- Quais tecnologias foram utilizadas
+- Mostrar a aplicação em funcionamento
+- Foque em pontos obrigatórios e diferenciais quando for apresentar.
+6. Adicione o link da apresentação do seu projeto no README.md.
+7. Verifique se o Readme está bom e faça o commit final em seu repositório;
+8. Confira a vaga desejada;
+9. Envie e aguarde as instruções para seguir no processo. Sucesso e boa sorte. =)
 
 ## Suporte
 
-Use o nosso canal no slack: http://bit.ly/32CuOMy para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
-
+Use a [nossa comunidade](https://coodesh.com/desenvolvedores#community) para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com.
