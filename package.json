@@ -1,0 +1,22 @@
+{
+  "name": "challenge-20220626",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@lab.coodesh.com:hanyelchamon/challenge-20220626.git"
+  },
+  "keywords": [],
+  "author": "Hanyel Chamon",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1"
+  }
+}
