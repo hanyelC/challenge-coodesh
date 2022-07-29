@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer')
 
 const fetchProducts = async () => {
-  const products = []
   const baseURL = 'https://world.openfoodfacts.org/'
 
   const browser = await puppeteer.launch()
@@ -16,9 +15,8 @@ const fetchProducts = async () => {
     return productsUrls
   })
 
-  for (let url of urls) {
-
-    console.log(url)
+  async function getProductData(browser, url) {
+    const page = await browser.newPage()
     await page.goto(url)
     const product = await page.evaluate(() => {
       const barcode = (document.querySelector('#barcode_paragraph') && document.querySelector('#barcode_paragraph').innerText.split(': ')[1]) || ''
@@ -28,7 +26,6 @@ const fetchProducts = async () => {
       const categories = (document.querySelector('#field_categories_value') && document.querySelector('#field_categories_value').innerText) || ''
       const packaging = (document.querySelector('#field_packaging_value') && document.querySelector('#field_packaging_value').innerText) || ''
       const brands = (document.querySelector('#field_brands_value') && document.querySelector('#field_brands_value').innerText) || ''
-
 
       return {
         code,
@@ -45,13 +42,19 @@ const fetchProducts = async () => {
 
     product.url = url
 
-    products.push(product)
+    return product
   }
 
+  const promises = []
 
+  for (let i = 0; i < 100 && i < urls.length; i++) {
+    const url = urls[i]
+    promises.push(getProductData(browser, url))
+  }
+
+  const products = await Promise.all(promises)
 
   await browser.close()
-
 
   return products
 }
