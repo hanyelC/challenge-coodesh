@@ -2,16 +2,27 @@ const puppeteer = require('puppeteer')
 
 const getProductData = async (browser, url) => {
   const page = await browser.newPage()
-  console.log(url)
   await page.goto(url)
   const product = await page.evaluate(() => {
-    const barcode = (document.querySelector('#barcode_paragraph') && document.querySelector('#barcode_paragraph').innerText.split(': ')[1]) || ''
+    const barcodeElement = document.querySelector('#barcode_paragraph')
+    const barcode = (barcodeElement && barcodeElement.innerText.split(': ')[1]) || ''
+
     const code = Number(barcode.split(' ')[0])
-    const product_name = (document.querySelector('h1') && document.querySelector('h1').innerText) || ''
-    const quantity = (document.querySelector('#field_quantity_value') && document.querySelector('#field_quantity_value').innerText) || ''
-    const categories = (document.querySelector('#field_categories_value') && document.querySelector('#field_categories_value').innerText) || ''
-    const packaging = (document.querySelector('#field_packaging_value') && document.querySelector('#field_packaging_value').innerText) || ''
-    const brands = (document.querySelector('#field_brands_value') && document.querySelector('#field_brands_value').innerText) || ''
+
+    const productNameElement = document.querySelector('h1')
+    const product_name = (productNameElement && productNameElement.innerText) || ''
+
+    const quantityElement = document.querySelector('#field_quantity_value')
+    const quantity = (quantityElement && quantityElement.innerText) || ''
+
+    const categoriesElement = document.querySelector('#field_categories_value')
+    const categories = (categoriesElement && categoriesElement.innerText) || ''
+
+    const packagingElement = document.querySelector('#field_packaging_value')
+    const packaging = (packagingElement && packagingElement.innerText) || ''
+
+    const brandsElement = document.querySelector('#field_brands_value')
+    const brands = (brandsElement && brandsElement.innerText) || ''
 
     return {
       code,
@@ -60,6 +71,8 @@ const getProductsList = async () => {
 }
 
   ; (async () => {
+    const initial_time = Date.now()
     const prod = await getProductsList()
-    console.log(prod)
+    const final_time = Date.now()
+    console.log(((final_time - initial_time) / 1000), '   seconds')
   })()
