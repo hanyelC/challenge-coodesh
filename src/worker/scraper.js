@@ -2,7 +2,10 @@ const puppeteer = require('puppeteer')
 
 const getProductData = async (browser, url) => {
   const page = await browser.newPage()
+  page.setDefaultNavigationTimeout(0)
+
   await page.goto(url)
+
   const product = await page.evaluate(() => {
     const barcodeElement = document.querySelector('#barcode_paragraph')
     const barcode = (barcodeElement && barcodeElement.innerText.split(': ')[1]) || ''
@@ -45,7 +48,10 @@ const getProductsList = async () => {
   const baseURL = 'https://world.openfoodfacts.org/'
 
   const browser = await puppeteer.launch()
+
   const page = await browser.newPage()
+  page.setDefaultNavigationTimeout(0)
+
   await page.goto(baseURL)
 
   const urls = await page.evaluate(() => {
