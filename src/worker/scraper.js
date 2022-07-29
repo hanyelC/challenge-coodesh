@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-async function getProductData(browser, url) {
+const getProductData = async (browser, url) => {
   const page = await browser.newPage()
   console.log(url)
   await page.goto(url)
