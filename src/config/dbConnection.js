@@ -1,7 +1,7 @@
 const { Client } = require('pg')
 const { PG } = require('./vars')
 
-const client = new Client({
+const db = new Client({
   host: PG.host,
   port: PG.port,
   user: PG.user,
@@ -9,4 +9,4 @@ const client = new Client({
   database: PG.db
 })
 
-module.exports = { client }
+module.exports = { db }

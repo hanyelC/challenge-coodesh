@@ -1,7 +1,7 @@
 const { readFileSync } = require('fs')
 const path = require('path')
 
-const { client } = require('../../config/dbConnection')
+const { db } = require('../../config/dbConnection')
 
 const migrate = async () => {
   const dataSql = readFileSync(path.resolve(__dirname, 'migrations', 'createProducts.sql')).toString()
@@ -11,15 +11,15 @@ const migrate = async () => {
   console.log(queries.length, queries[0])
 
   try {
-    await client.connect()
+    await db.connect()
 
     for (const query of queries) {
-      await client.query(query)
+      await db.query(query)
     }
 
-    await client.end()
+    await db.end()
   } catch (error) {
-    await client.end()
+    await db.end()
 
     console.log(error.stack)
   }
