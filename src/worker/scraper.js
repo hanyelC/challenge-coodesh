@@ -76,9 +76,4 @@ const getProductsList = async () => {
   return products
 }
 
-  ; (async () => {
-    const initial_time = Date.now()
-    const prod = await getProductsList()
-    const final_time = Date.now()
-    console.log(((final_time - initial_time) / 1000), '   seconds')
-  })()
+module.exports = { getProductsList }
