@@ -8,8 +8,6 @@ const migrate = async () => {
   const queries = dataSql.split('--###')
   queries.shift()
 
-  console.log(queries.length, queries[0])
-
   try {
     await db.connect()
 
