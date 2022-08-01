@@ -16,7 +16,8 @@ $$;
 
 CREATE TABLE IF NOT EXISTS products (
   id serial PRIMARY KEY,
-  code int UNIQUE,
+  code bigint UNIQUE,
+  barcode text,
   status status_type,
   product_name text,
   imported_t TIMESTAMP DEFAULT NOW(),
