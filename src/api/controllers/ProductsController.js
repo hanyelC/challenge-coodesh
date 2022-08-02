@@ -3,17 +3,28 @@ const { APIError } = require('../utils/APIError')
 
 class ProductsController {
   async index(req, res) {
-    const { start = 1, limit = 20 } = req.query
+    let { start, limit } = req.query
+
+    start = Number(start) || 1
+    limit = Number(limit) || 20
+
+    const paging = {}
 
     const productsRepository = new ProductsRepository()
 
-    const products = await productsRepository.index(start, limit)
+    const products = await productsRepository.index(start, limit + 1)
 
     if (!products) {
       throw new APIError(404, 'Product not found')
     }
 
-    return res.status(200).json(products)
+    if (products.length > limit) {
+      const { id } = products.pop()
+
+      paging.next = `${req.protocol}://${req.get('host')}/products?start=${id}&limit=${limit}`
+    }
+
+    return res.status(200).json({ products, paging })
   }
 
   async show(req, res) {
