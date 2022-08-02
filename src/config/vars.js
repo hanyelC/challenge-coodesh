@@ -1,5 +1,5 @@
 const path = require('path')
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV || 'development'
 
 if (env === 'production') {
   require('dotenv').config({ path: path.join(__dirname, `../../.env`) })
@@ -8,7 +8,8 @@ if (env === 'production') {
 }
 
 module.exports = {
-  env: process.env.NODE_ENV,
+  env,
+  port: process.env.PORT,
   PG: {
     user: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
