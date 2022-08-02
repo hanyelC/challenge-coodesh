@@ -7,7 +7,8 @@
     "dev": "nodemon ./src/api/index.js",
     "prepare": "husky install",
     "docker:dev": "docker compose -f docker-compose.dev.yml up -d",
-    "docker:stop": "docker stop postgres_db"
+    "docker:stop": "docker stop postgres_db",
+    "cron": "node ./worker-cron.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,9 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
+    "node-cron": "^3.0.1",
     "pg": "^8.7.3",
-    "puppeteer": "^15.5.0"
+    "puppeteer": "^15.5.0",
+    "uuid": "^8.3.2"
   }
 }
