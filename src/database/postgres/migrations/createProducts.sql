@@ -28,3 +28,11 @@ CREATE TABLE IF NOT EXISTS products (
   brands text,
   image_url text
 );
+
+--###
+
+CREATE TABLE IF NOT EXISTS imports (
+  id serial PRIMARY KEY,
+  imported_t TIMESTAMP DEFAULT NOW(),
+  page_number int NOT NULL
+);
