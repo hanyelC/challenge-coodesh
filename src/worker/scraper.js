@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer')
-const { getPageToScrap } = require('./getPageToScrap')
 
 const getProductData = async (browser, url) => {
   const page = await browser.newPage()
