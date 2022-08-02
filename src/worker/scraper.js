@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const { getPageToScrap } = require('./getPageToScrap')
 
 const getProductData = async (browser, url) => {
   const page = await browser.newPage()
@@ -44,8 +45,9 @@ const getProductData = async (browser, url) => {
   return product
 }
 
-const getProductsList = async () => {
-  const baseURL = 'https://world.openfoodfacts.org/'
+const getProductsList = async (pageToScrap) => {
+
+  const baseURL = 'https://world.openfoodfacts.org/' + pageToScrap
 
   const browser = await puppeteer.launch()
 
