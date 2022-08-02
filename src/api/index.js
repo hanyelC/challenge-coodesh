@@ -1,3 +1,4 @@
+require('express-async-errors')
 const { port } = require('../config/vars')
 const server = require('../config/server')
 
