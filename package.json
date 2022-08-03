@@ -4,9 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=production pm2 start ./src/api/index.js --name API",
     "dev": "nodemon ./src/api/index.js",
     "prepare": "husky install",
     "docker:dev": "docker compose -f docker-compose.dev.yml up -d",
+    "docker:prod": "docker compose -f docker-compose.prod.yml up",
     "docker:stop": "docker stop postgres_db",
     "cron": "node ./worker-cron.js",
     "migrate": "node ./src/database/postgres/index.js"
@@ -23,6 +25,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@types/pg": "^8.6.5",
+    "cross-env": "^7.0.3",
     "husky": "^8.0.1",
     "nodemon": "^2.0.19"
   },
@@ -34,6 +37,7 @@
     "express-async-errors": "^3.1.1",
     "node-cron": "^3.0.1",
     "pg": "^8.7.3",
+    "pm2": "^5.2.0",
     "puppeteer": "^15.5.0",
     "uuid": "^8.3.2"
   }
