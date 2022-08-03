@@ -20,7 +20,12 @@
 
 O projeto é composto por 3 partes, um web scraper que busca dados do [Open Food Facts](https://world.openfoodfacts.org/), um banco banco de dados PostgreSQL para armazenar os dados dos produtos, e uma API REST construída em Node + Express para disponibilizar os dados do banco
 
-### Como instalar e usar o projeto
+<br>
+
+### Para utilizar o projeto em produção veja [PRODUCTION.docs.md](./PRODUCTION.docs.md)
+<br>
+
+### Como instalar e usar o projeto em desenvolvimento
 <br>
 
 **Clone o projeto e acesse a pasta**
@@ -34,13 +39,25 @@ git clone git@lab.coodesh.com:hanyelchamon/challenge-20220626.git && cd challeng
 
 no arquivo [cron.config.json](./cron.config.json)
 
+<br>
+
 ```bash
 # Instale as dependências
 $ npm install
+```
 
+<br>
+
+**Inicialize o banco de dados**
+```bash
 # Rode o banco de dados no docker
 $ npm run docker:dev
+
+# Rode a migration do banco
+$ npm run migrate
 ```
+
+<br>
 
 ```bash
 # Rode o CRON
@@ -55,7 +72,6 @@ $ npm run dev
 ```
 Api irá rodar na porta definida no arquivo [.env.dev](./.env.dev) na variável PORT
 
-<br>
 <br>
 
 >  This is a challenge by [Coodesh](https://coodesh.com/)

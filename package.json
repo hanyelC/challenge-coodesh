@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production pm2 start ./src/api/index.js --name API",
+    "start": "cross-env NODE_ENV=production pm2 start ./src/api/index.js --name API && pm2 start worker-cron.js --name CRON",
     "dev": "nodemon ./src/api/index.js",
     "prepare": "husky install",
     "docker:dev": "docker compose -f docker-compose.dev.yml up -d",
-    "docker:prod": "docker compose -f docker-compose.prod.yml up",
+    "docker:prod": "docker compose -f docker-compose.prod.yml up -d",
     "docker:stop": "docker stop postgres_db",
     "cron": "node ./worker-cron.js",
     "migrate": "node ./src/database/postgres/index.js"
