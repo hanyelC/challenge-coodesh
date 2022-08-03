@@ -15,13 +15,15 @@ const migrate = async () => {
       await client.query(query)
     }
 
-    console.log('Migration finished')
-
   } catch (error) {
     console.log(error.stack)
   } finally {
     client.release()
+    console.log('Migration finished')
   }
 }
 
-module.exports = { migrate }
+migrate()
+  .catch(error => {
+    console.error(error)
+  })
