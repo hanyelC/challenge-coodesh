@@ -52,9 +52,8 @@ $ npm run cron
 **Em outro terminal rode a API**
 ```bash
 $ npm run dev
-
-# Api irá rodar na porta definida no arquivo .env.dev
 ```
+Api irá rodar na porta definida no arquivo [.env.dev](./.env.dev) na variável PORT
 
 <br>
 <br>
